@@ -1,0 +1,36 @@
+h1 {
+    font-family: fantasy;
+    font-size: 300%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+h4 {
+    font-family: fantasy;
+    font-size: 190%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+body {
+    background-image: url(../images/background.jpg);
+}
+
+#numberOfGuesses {
+    float: left;
+    margin-left: 50px;
+    padding: 25px;
+    background-color: rgb(194, 107, 14);
+
+
+}
+
+#lettersGuessed {
+    float: right;
+    margin-right: 50px;
+    padding: 25px;
+    background-color: cyan;
+}
