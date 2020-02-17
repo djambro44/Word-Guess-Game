@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="assets/javascript/game.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 </head>
+
 <body>
-   
-    <h1>Hangman</h1>
 
-    <h4 id="guess">Press any key to get started!</h4>
-
-    <!-- letter spaces with answer -->
-
-    <!-- number decreasing in value with each guess -->
-    <div id= "numberOfGuesses">
-    <h4>Number of guesses left</h4>
-    </div>
     
-    <!-- list of letters not used in answer -->
-    <h4 id="lettersGuessed">Letters already guessed</h4>
+        <h1>Hangman</h1>
+
+        <h4 id="guess">Press any key to get started!</h4>
+
+        <!-- letter spaces with answer -->
+        <div class="wordToBeGuessed">
+        <button onclick="initCurrentWord()">Click me to get started!</button>
+        <p id="randomWord"></p>
+        </div>
+
+
+        <!-- number decreasing in value with each guess -->
+        <div class="numGuesses">
+            <h4>Number of guesses left</h4>
+            <div id="guessesLeft">1</div>
+        </div>
+
+        <!-- list of letters not used in answer -->
+        <div class="lettersGuessed">
+            <h4>Letters already guessed</h4>
+            <div id="guessedLetters">1</div>
+        </div>
+    
 </body>
+
 </html>

@@ -1,36 +1,57 @@
 h1 {
-    font-family: fantasy;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 300%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    color: whitesmoke;
     
 }
 
 h4 {
-    font-family: fantasy;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 190%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    color: whitesmoke;
     
 }
 body {
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/background-hangman.jpg);
+    background-size: cover;
+    
 }
 
-#numberOfGuesses {
+.wordToBeGuessed {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 300%;
+}
+
+.numGuesses {
     float: left;
     margin-left: 50px;
     padding: 25px;
     background-color: rgb(194, 107, 14);
+    opacity: .5;
 
 
 }
 
-#lettersGuessed {
+#guessesLeft {
+    text-align: center;
+}
+
+#guessedLetters {
+    text-align: center;
+}
+
+.lettersGuessed {
     float: right;
     margin-right: 50px;
     padding: 25px;
-    background-color: cyan;
+    background-color: rgb(194, 107, 14);
+    opacity: .5;
 }

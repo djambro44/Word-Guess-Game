@@ -1,52 +1,54 @@
+var currentWordDiv = document.getElementById("currentWord");
+var remainingGuesses = 15;
+var letterGuessed = document.getElementById("guessedLetters");
+//wins
+//losses
 
 // array of answer words
 var words = [
-    "sublime",
-    "slightly stoopid",
-    "pepper"
+    "scorpion",
+    "cactus",
+    "snake",
+    "coyote",
+    "cowboy"
 ];
 
-
 // picks random word from words array
-var word = words[Math.floor(Math.random() * words.length)];
-
-console.log(word);
-console.log(words);
-
-// matches number of underscores to length of the answer word
 var answerArray = [];
-for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
+var placeHolder = [];
+
+//function to get _ for each character of var word
+function initCurrentWord() {
+    var word = words[Math.floor(Math.random() * words.length)];
+    answerArray = word.split("");
+    for (var i = 0; i < word.length; i++) {
+        placeHolder[i] = "_";
+        // document.getElementById("randomWord").innerHTML = placeHolder;
+    }
 }
-console.log(answerArray);
+initCurrentWord();
+// document.getElementById("currentWord").innerText = placeHolder;
 
-function getCorrectLetters(){
-for (var x = 0; x < word.length; x++) {
-    return word.charAt(x);
+console.log(answerArray, placeHolder);
+
+// placeHolder = document.getElementById("currentWord");
+
+
+//gets user input and stores it as userGuess
+document.onkeyup = function (event) {
+    var userGuess = event.key.toLowerCase();
+    console.log(userGuess);
 }
+
+
+
+
+//push wrong letter guesses 
+function wrong() {
+    remainingGuesses--;
+    letterGuessed.push(userGuess);
 }
-
-var correctLetters = getCorrectLetters();
-
-// var correctLetters = word.charAt(word.length-1);
-
-console.log(correctLetter);
-
-// document.onkeyup = function(event) {
-//     if (hasFinshed) {
-//         resetGame();
-//         hasFinsihed = false;
-//     } else {
-//         if(event.keyCode >= 65 && event.keycode <= 90) {
-
-//         }
-//     }
-// }
+console.log(wrong);
 
 
 
-
-// // loop the will keep going as long as player has remaining guesses
-// while (remainingGuesses > 0) {
-
-// }
