@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="assets/javascript/game.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 
 <body>
 
     
-        <h1>Hangman</h1>
+        <h1>Desert Hangman</h1>
 
-        <h4 id="guess">Press any key to get started!</h4>
+        <h4 id="guess">Press the button below to get started!</h4>
 
         <!-- letter spaces with answer -->
         <div class="wordToBeGuessed">
-        <button onclick="initCurrentWord()">Click me to get started!</button>
+        <button type="button" class="btn btn-primary" onclick="initCurrentWord()">Click me to get started!</button>
         <p id="randomWord"></p>
         </div>
 
@@ -35,10 +36,11 @@
 
         <!-- list of letters not used in answer -->
         <div class="lettersGuessed">
-            <h4>Letters already guessed</h4>
-            <div id="guessedLetters">1</div>
+            <h4 id= "two">Letters already guessed</h4>
+            <div id="guessedLetters">A</div>
         </div>
-    
+
+        <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>

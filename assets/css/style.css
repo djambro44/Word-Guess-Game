@@ -15,8 +15,8 @@ h4 {
     margin-right: auto;
     text-align: center;
     color: whitesmoke;
-    
 }
+
 body {
     background-image: url(../images/background-hangman.jpg);
     background-size: cover;
@@ -34,10 +34,12 @@ body {
     float: left;
     margin-left: 50px;
     padding: 25px;
-    background-color: rgb(194, 107, 14);
-    opacity: .5;
-
-
+    background-color: rgb(233, 183, 130);
+    opacity: .9;
+    border: 5px solid gray;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 #guessesLeft {
@@ -52,6 +54,10 @@ body {
     float: right;
     margin-right: 50px;
     padding: 25px;
-    background-color: rgb(194, 107, 14);
-    opacity: .5;
+    background-color: rgb(233, 183, 130);
+    opacity: .9;
+    border: 5px solid gray;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }

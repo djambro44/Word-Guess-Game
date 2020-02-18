@@ -16,6 +16,8 @@ var words = [
 // picks random word from words array
 var answerArray = [];
 var placeHolder = [];
+//array for function wrong
+var incorrect = [];
 
 //function to get _ for each character of var word
 function initCurrentWord() {
@@ -23,15 +25,15 @@ function initCurrentWord() {
     answerArray = word.split("");
     for (var i = 0; i < word.length; i++) {
         placeHolder[i] = "_";
-        // document.getElementById("randomWord").innerHTML = placeHolder;
+        document.getElementById("randomWord").innerHTML = placeHolder;
     }
 }
 initCurrentWord();
-// document.getElementById("currentWord").innerText = placeHolder;
+
 
 console.log(answerArray, placeHolder);
 
-// placeHolder = document.getElementById("currentWord");
+
 
 
 //gets user input and stores it as userGuess
@@ -46,9 +48,40 @@ document.onkeyup = function (event) {
 //push wrong letter guesses 
 function wrong() {
     remainingGuesses--;
-    letterGuessed.push(userGuess);
+    var remainingGuesses = document.getElementById("guessesLeft");
+    userGuess.push(incorrect);
+    var incorrect = document.getElementById("guessedLetters");
 }
 console.log(wrong);
+
+//user guesses correctly
+function right() {
+    var placeHolder = []
+    var userGuess = placeHolder.join("userGuess");
+}
+
+//game over function
+function gameOver(){
+    remainingGuesses = 0;
+    letterGuessed = [];
+    incorrect = [];
+    //should I run the initCurrentWord function again? How?
+}
+
+// if (userGuess === placeHolder) {
+//     function right() {
+//         var placeHolder = []
+//         var userGuess = placeHolder.join("userGuess");
+// }
+// } else {
+//     function wrong() {
+//         remainingGuesses--;
+//         var remainingGuesses = document.getElementById("guessesLeft");
+//         userGuess.push(incorrect);
+//         var incorrect = document.getElementById("guessedLetters");
+//     }
+// }
+
 
 
 
