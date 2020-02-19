@@ -50,11 +50,15 @@ document.onkeyup = function (event) {
 
 function checkUserGuess () {
 // 1) check user guess against answerArray
-//      a) if true - update placeholder to show userGuess(right)
-//              I) if placeHolder ==== answerArray trigger Congrats
-//      b) if false - add userGuess to letterGuessedDiv(wrong)
-
+if(userGuess === answerArray){
+    //      a) if true - update placeholder to show userGuess(right)
+    right();
+} else {
+    wrong();
 }
+//      b) if false - add userGuess to letterGuessedDiv(wrong)
+}
+checkUserGuess();
 
 
 
@@ -70,9 +74,11 @@ wrong();
 
 //user guesses correctly
 function right() {
-    //UserGuess append placeHolder
-    //
+    answerArray;
+    var correctGuess = answerArray.join(userGuess);
 }
+right();
+console.log(right());
 
 //game over function
 function gameOver(){
@@ -82,18 +88,10 @@ function gameOver(){
     //should I run the initCurrentWord function again? How?
 }
 
-// if (userGuess === placeHolder) {
-//     function right() {
-//         var placeHolder = []
-//         var userGuess = placeHolder.join("userGuess");
-// }
+//  if (userGuess === placeHolder) {
+//     function right();
 // } else {
-//     function wrong() {
-//         remainingGuesses--;
-//         var remainingGuesses = document.getElementById("guessesLeft");
-//         userGuess.push(incorrect);
-//         var incorrect = document.getElementById("guessedLetters");
-//     }
+//     function wrong();      
 // }
 
 
