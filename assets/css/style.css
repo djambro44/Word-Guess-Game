@@ -44,10 +44,19 @@ body {
 
 #guessesLeft {
     text-align: center;
+    color: whitesmoke;
+    font-size: 190%;
 }
 
 #guessedLetters {
     text-align: center;
+    color: whitesmoke;
+    font-size: 190%;
+}
+
+#randomWord {
+    font-size: 190%;
+    color: whitesmoke;
 }
 
 .lettersGuessed {

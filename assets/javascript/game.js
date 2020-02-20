@@ -2,7 +2,6 @@ var currentWordDiv = document.getElementById("randomWord");
 var remainingGuessesDiv = document.getElementById("guessesLeft")
 var remainingGuesses = 15;
 var letterGuessedDiv = document.getElementById("guessedLetters");
-
 //wins
 //losses
 
@@ -12,7 +11,8 @@ var words = [
     "cactus",
     "snake",
     "coyote",
-    "cowboy"
+    "cowboy",
+    "tumbleweed"
 ];
 
 // empty arrays
@@ -20,6 +20,7 @@ var answerArray = [];
 var placeHolder = [];
 //array for function wrong
 var incorrect = [];
+//saves userGuess globally
 var userGuess;
 
 //function to get _ for each character of var word
@@ -36,11 +37,6 @@ function initCurrentWord() {
 }
 initCurrentWord();
 
-
-
-
-
-
 //gets user input and stores it as userGuess
 document.onkeyup = function (event) {
     userGuess = event.key.toLowerCase();
@@ -48,15 +44,36 @@ document.onkeyup = function (event) {
     checkUserGuess();
 }
 
-function checkUserGuess () {
-// 1) check user guess against answerArray
-if(userGuess === answerArray){
-    //      a) if true - update placeholder to show userGuess(right)
-    right();
-} else {
-    wrong();
-}
-//      b) if false - add userGuess to letterGuessedDiv(wrong)
+// function fillWordWithLetter(userGuess, answerArray) {
+//     answerArray.split('').map(userGuess => {
+//         if (userGuess === answerArray) {
+//             return userGuess.toUpperCase()
+//         }
+//     }).join(' ')
+// }
+// fillWordWithLetter();
+
+// function fillWordWithLetter(){
+//     // var correctGuesses = answerArray.map(userGuess);
+//     document.getElementById("currentWordDiv").innerHTML = answerArray.find(userGuess);
+// }
+// fillWordWithLetter();
+
+// function fillWordWithLetter() {
+//     var correctGuesses = answerArray.find(userGuess);
+//     if (true) {
+//         answerArray.join(userGuess);
+//     }
+// }
+// fillWordWithLetter();
+
+//makes letters guessed and number of guesses boxes work....not affecting placeHolder or answerArray still
+function checkUserGuess() {
+    if (userGuess === answerArray) {
+        right();
+    } else {
+        wrong();
+    }
 }
 checkUserGuess();
 
@@ -66,7 +83,7 @@ checkUserGuess();
 function wrong() {
     remainingGuesses--;
     console.log(remainingGuesses);
-    remainingGuessesDiv.textContent = remainingGuesses; 
+    remainingGuessesDiv.textContent = remainingGuesses;
     incorrect.push(userGuess);
     letterGuessedDiv.innerHTML = incorrect;
 }
@@ -76,24 +93,24 @@ wrong();
 function right() {
     answerArray;
     var correctGuess = answerArray.join(userGuess);
+    // currentWordDiv.innerHTML = correctGuess;
 }
 right();
 console.log(right());
 
+
+
+if (remainingGuesses === 0) {
+    gameOver();
+}
+
 //game over function
-function gameOver(){
+function gameOver() {
     remainingGuesses = 0;
     letterGuessed = [];
     incorrect = [];
-    //should I run the initCurrentWord function again? How?
+    currentWordDiv.innerHTML = "Game Over!";
 }
-
-//  if (userGuess === placeHolder) {
-//     function right();
-// } else {
-//     function wrong();      
-// }
-
 
 
 
