@@ -1,11 +1,7 @@
-var currentWordDiv = document.getElementById("randomWord");
-var remainingGuessesDiv = document.getElementById("guessesLeft")
-var remainingGuesses = 15;
-var letterGuessedDiv = document.getElementById("guessedLetters");
-//wins
-//losses
-
-// array of answer words
+// make variabels
+//     userGuess 
+var userGuess;
+//     words - array 
 var words = [
     "scorpion",
     "cactus",
@@ -14,103 +10,57 @@ var words = [
     "cowboy",
     "tumbleweed"
 ];
-
-// empty arrays
-var answerArray = [];
-var placeHolder = [];
-//array for function wrong
-var incorrect = [];
-//saves userGuess globally
-var userGuess;
-
-//function to get _ for each character of var word
-function initCurrentWord() {
-    currentWordDiv.innerHTML = "";
-    placeHolder = [];
-    var word = words[Math.floor(Math.random() * words.length)];
-    answerArray = word.split("");
-    for (var i = 0; i < word.length; i++) {
-        placeHolder[i] = "_";
+//     selected word 
+var selectedWord;
+// split selected word
+var splitSelectedWord
+// selected word _'s 
+var underscores = [];
+//     incorrect guess 
+var incorrectGuess;
+//     correct guess 
+var correctGuess;
+//     remaining guesses 
+var remainingGuesses;
+//     incorrect guesses 
+var incorrectGuesses;
+//     wins 
+var wins;
+//     losses 
+var losses;
+// make functions 
+//     selecting random word from word array and  
+function getRandomWord() {
+    var selectedWord = words[Math.floor(Math.random() * words.length)];
+    console.log(selectedWord);
+    //      split that word into individual characters
+    var splitSelectedWord = selectedWord.split("");
+    console.log(splitSelectedWord);
+    //     setting _ for each character in selected word
+    for (i = 0; i < selectedWord.length; i++){
+        var underscores = splitSelectedWord[i] = "_";
+        console.log(underscores);
     }
-    currentWordDiv.innerHTML = placeHolder;
-    console.log(answerArray, placeHolder);
 }
-initCurrentWord();
+getRandomWord();
 
-//gets user input and stores it as userGuess
+//     get user input 
 document.onkeyup = function (event) {
     userGuess = event.key.toLowerCase();
     console.log(userGuess);
-    checkUserGuess();
 }
 
-// function fillWordWithLetter(userGuess, answerArray) {
-//     answerArray.split('').map(userGuess => {
-//         if (userGuess === answerArray) {
-//             return userGuess.toUpperCase()
-//         }
-//     }).join(' ')
-// }
-// fillWordWithLetter();
-
-// function fillWordWithLetter(){
-//     // var correctGuesses = answerArray.map(userGuess);
-//     document.getElementById("currentWordDiv").innerHTML = answerArray.find(userGuess);
-// }
-// fillWordWithLetter();
-
-// function fillWordWithLetter() {
-//     var correctGuesses = answerArray.find(userGuess);
-//     if (true) {
-//         answerArray.join(userGuess);
-//     }
-// }
-// fillWordWithLetter();
-
-//makes letters guessed and number of guesses boxes work....not affecting placeHolder or answerArray still
-function checkUserGuess() {
-    if (userGuess === answerArray) {
-        right();
-    } else {
-        wrong();
-    }
-}
-checkUserGuess();
-
-
-
-//push wrong letter guesses 
-function wrong() {
+//     check if user input matches currect word single character 
+if (userGuess === splitSelectedWord) {
+    //         if yes - place correct guess  in place of _ 
+    underscores.join(userGuess);
+} else {
     remainingGuesses--;
-    console.log(remainingGuesses);
-    remainingGuessesDiv.textContent = remainingGuesses;
-    incorrect.push(userGuess);
-    letterGuessedDiv.innerHTML = incorrect;
-}
-wrong();
-
-//user guesses correctly
-function right() {
-    answerArray;
-    var correctGuess = answerArray.join(userGuess);
-    // currentWordDiv.innerHTML = correctGuess;
-}
-right();
-console.log(right());
-
-
-
-if (remainingGuesses === 0) {
-    gameOver();
-}
-
-//game over function
-function gameOver() {
-    remainingGuesses = 0;
-    letterGuessed = [];
-    incorrect = [];
-    currentWordDiv.innerHTML = "Game Over!";
+    //         if no - user losses a guess and incorrect guess is stored as incorrect guess 
+    incorrectGuesses.join(userGuess);
 }
 
 
+//     if user guesses all correct letters - add one to wins 
+//     if user runs out of guesses prompt game over 
 
